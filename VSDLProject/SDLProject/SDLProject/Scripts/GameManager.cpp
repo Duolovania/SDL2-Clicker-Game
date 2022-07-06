@@ -2,7 +2,7 @@
 
 void GameManager::Begin()
 {
-	Debug("gamemanager ");
+	Debug("gamemanager running ");
 	score = 0;
 }
 

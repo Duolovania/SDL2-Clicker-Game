@@ -1,9 +1,18 @@
 #include "Headers/game.h"
 #include "Headers/gamemanager.h"
+#include <cmath>
 
-SDL_Texture* wingTex;
+SDL_Texture* img;
+SDL_Surface* iconSurf = IMG_Load("DevAssets/Textures/colonel.png");
+SDL_Rect texr;
+
 GameManager gameManager;
-SDL_Surface* surf = IMG_Load("DevAssets/Textures/colonel.png");
+
+TTF_Font* scoreFont = TTF_OpenFont("DevAssets/Fonts/font.ttf", 24);
+SDL_Color fontCol = { 255, 255, 255 };
+SDL_Surface* textSurf;
+SDL_Texture* textMsg;
+SDL_Rect textRect;
 
 Game::Game()
 {
@@ -27,20 +36,53 @@ void Game::Run()
 void Game::Init(const char* title, int x, int y, int w, int h, Uint32 flags)
 {
     SDL_Init(SDL_INIT_EVERYTHING);
+    TTF_Init();
     window = SDL_CreateWindow(title, x, y, w, h, flags);
+    SDL_SetWindowIcon(window, iconSurf);
     renderer = SDL_CreateRenderer(window, -1, 0);
+    
+    //textSurf = TTF_RenderText_Solid(scoreFont, (char*)gameManager.score, fontCol);
+    textMsg = SDL_CreateTextureFromSurface(renderer, textSurf);
+    
+    //textRect.x = 0;
+    //textRect.y = 0;
+    textRect.w = 100;
+    //textRect.h = 100;
+    SDL_QueryTexture(textMsg, NULL, NULL, &src.w, &src.h);
 
     SDL_SetRenderDrawColor(renderer, 224, 57, 45, 255);
     SDL_RenderClear(renderer);
     SDL_RenderPresent(renderer);
-    
-    SDL_Surface* surf = IMG_Load("DevAssets/Textures/namjas.bmp");
+
+    img = IMG_LoadTexture(renderer, "DevAssets/Textures/wickedwing.png");
+    SDL_QueryTexture(img, NULL, NULL, &w, &h); // get the width and height of the texture
+    // put the location where we want the texture to be drawn into a rectangle
+    // I'm also scaling the texture 2x simply by setting the width and height
+    texr.x = screenWidth / 2 - 150; texr.y = screenHeight / 2 - 100; texr.w = w / 2; texr.h = h / 2;
 }
 
 // Game loop.
 void Game::Forever()
 {
     HandleEvents();
+
+    // clear the screen
+    SDL_RenderClear(renderer);
+    // copy the texture to the rendering context
+    SDL_RenderCopy(renderer, img, NULL, &texr);
+    //SDL_RenderCopy(renderer, textMsg, NULL, &textRect);
+    // flip the backbuffer
+    // this means that everything that we prepared behind the screens is actually shown
+    SDL_RenderPresent(renderer);
+}
+
+double distanceFromCursor()
+{
+    int mouseX = 0;
+    int mouseY = 0;
+    SDL_GetMouseState(&mouseX, &mouseY);
+
+    return sqrt(pow((texr.x + texr.w / 2) - mouseX, 2) + pow((texr.y + texr.h / 2) - mouseY, 2));
 }
 
 // Event handler.
@@ -54,15 +96,20 @@ void Game::HandleEvents()
             gameState = GameState::EXIT;
             break;
         case SDL_MOUSEBUTTONDOWN:
-            if (evnt.button.button == SDL_BUTTON_LEFT)
-            {
-                gameManager.PlayerAction();
-                Debug(std::to_string(gameManager.score) + " ");
-            }
-            else if (evnt.button.button == SDL_BUTTON_RIGHT)
-            {
-                Debug("ADlay");
-            }
+            ClickEvent();
             break;
+    }
+}
+
+void Game::ClickEvent()
+{
+    if (evnt.button.button == SDL_BUTTON_LEFT && distanceFromCursor() < 150)
+    {
+        gameManager.PlayerAction();
+        Debug(std::to_string(gameManager.score) + " ");
+    }
+    else if (evnt.button.button == SDL_BUTTON_RIGHT)
+    {
+        Debug("ADlay");
     }
 }

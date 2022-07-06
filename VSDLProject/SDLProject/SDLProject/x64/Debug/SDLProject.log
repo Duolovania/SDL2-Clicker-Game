@@ -1,5 +1,5 @@
 ﻿  Game.cpp
-  GameManager.cpp
-  Generating Code...
-  Source.cpp
-  SDLProject.vcxproj -> C:\Users\ryhan\Downloads\Other\GitHubRepo\GameEngine\VSDLProject\SDLProject\x64\Debug\SDLProject.exe
+C:\Users\ryhan\Downloads\Other\GitHubRepo\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(43,72): warning C4312: 'type cast': conversion from 'int' to 'char *' of greater size
+Game.obj : error LNK2019: unresolved external symbol TTF_OpenFont referenced in function "void __cdecl `dynamic initializer for 'scoreFont''(void)" (??__EscoreFont@@YAXXZ)
+Game.obj : error LNK2019: unresolved external symbol TTF_RenderText_Solid referenced in function "private: void __cdecl Game::Init(char const *,int,int,int,int,unsigned int)" (?Init@Game@@AEAAXPEBDHHHHI@Z)
+C:\Users\ryhan\Downloads\Other\GitHubRepo\GameEngine\VSDLProject\SDLProject\x64\Debug\SDLProject.exe : fatal error LNK1120: 2 unresolved externals

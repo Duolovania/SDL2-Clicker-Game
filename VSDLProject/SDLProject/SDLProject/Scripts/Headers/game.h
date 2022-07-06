@@ -4,6 +4,7 @@
 #include "SDL.h"
 #include "SDL_thread.h"
 #include "SDL_image.h"
+#include "SDL_ttf.h"
 #include <string>
 
 enum class GameState { PLAY, EXIT };
@@ -21,13 +22,12 @@ class Game
 
     private:
         void Init(const char* title, int x, int y, int w, int h, Uint32 flags); // Initializes window.
+        virtual void Forever(); // Game loop
         void HandleEvents();
+        void ClickEvent();
         
         SDL_Window* window;
         SDL_Renderer* renderer;
         
         int screenHeight, screenWidth;
-
-    protected:
-        virtual void Forever(); // Game loop
 };
