@@ -13,6 +13,5 @@ class GameManager : Game
 		}
 
 	protected:
-		void Begin() override;
-		void Forever() override;
+		void Begin();
 };

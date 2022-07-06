@@ -20,7 +20,6 @@ Game::~Game() {};
 void Game::Run()
 {
     Init("Please stop ordering Jumbo Bkts.", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenWidth, screenHeight, SDL_WINDOW_SHOWN);
-    Begin();
     while (gameState != GameState::EXIT) Forever();
 }
 
@@ -38,13 +37,6 @@ void Game::Init(const char* title, int x, int y, int w, int h, Uint32 flags)
     SDL_Surface* surf = IMG_Load("DevAssets/Textures/namjas.bmp");
 }
 
-// Called at start of game.
-void Game::Begin()
-{
-    SDL_BlitSurface(surf, NULL, NULL, NULL);
-    Debug("game");
-}
-
 // Game loop.
 void Game::Forever()
 {
@@ -54,7 +46,6 @@ void Game::Forever()
 // Event handler.
 void Game::HandleEvents()
 {
-    SDL_Event evnt;
     SDL_PollEvent(&evnt);
 
     switch (evnt.type)

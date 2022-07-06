@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "SDL.h"
+#include "SDL_thread.h"
 #include "SDL_image.h"
 #include <string>
 
@@ -13,6 +14,7 @@ class Game
         Game();
         ~Game();
         GameState gameState;
+        SDL_Event evnt;
        
         void Run(); // Runs program.
         static void Debug(std::string log) { std::cout << log; }
@@ -27,6 +29,5 @@ class Game
         int screenHeight, screenWidth;
 
     protected:
-        virtual void Begin(); // Runs as game starts
         virtual void Forever(); // Game loop
 };
