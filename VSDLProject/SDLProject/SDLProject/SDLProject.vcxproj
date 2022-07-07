@@ -107,13 +107,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\ryhan\Downloads\Software\Installers\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\include;C:\Users\ryhan\Downloads\Software\Installers\SDL2_image-devel-2.0.5-VC\SDL2\include;C:\Users\ryhan\Downloads\Software\Installers\SDL2-devel-2.0.22-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\include;C:\Users\ryhan\Downloads\Software\Installers\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\include;C:\Users\ryhan\Downloads\Software\Installers\SDL2_image-devel-2.0.5-VC\SDL2\include;C:\Users\ryhan\Downloads\Software\Installers\SDL2-devel-2.0.22-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\ryhan\Downloads\Software\Installers\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\lib\x64;C:\Users\ryhan\Downloads\Software\Installers\SDL2_image-devel-2.0.5-VC\SDL2\lib\x64;C:\Users\ryhan\Downloads\Software\Installers\SDL2-devel-2.0.22-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\lib\x64;C:\Users\ryhan\Downloads\Software\Installers\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\lib\x64;C:\Users\ryhan\Downloads\Software\Installers\SDL2_image-devel-2.0.5-VC\SDL2\lib\x64;C:\Users\ryhan\Downloads\Software\Installers\SDL2-devel-2.0.22-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

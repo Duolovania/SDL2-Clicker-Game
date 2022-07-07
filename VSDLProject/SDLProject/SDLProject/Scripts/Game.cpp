@@ -8,7 +8,7 @@ SDL_Rect texr;
 
 GameManager gameManager;
 
-TTF_Font* scoreFont = TTF_OpenFont("DevAssets/Fonts/font.ttf", 24);
+TTF_Font* scoreFont;
 SDL_Color fontCol = { 255, 255, 255 };
 SDL_Surface* textSurf;
 SDL_Texture* textMsg;
@@ -36,28 +36,31 @@ void Game::Run()
 void Game::Init(const char* title, int x, int y, int w, int h, Uint32 flags)
 {
     SDL_Init(SDL_INIT_EVERYTHING);
-    TTF_Init();
+    if (TTF_Init() < 0) Debug("Error");
     window = SDL_CreateWindow(title, x, y, w, h, flags);
+    
     SDL_SetWindowIcon(window, iconSurf);
     renderer = SDL_CreateRenderer(window, -1, 0);
-    
-    //textSurf = TTF_RenderText_Solid(scoreFont, (char*)gameManager.score, fontCol);
+
+    scoreFont = TTF_OpenFont("DevAssets/Fonts/OlivettiNeue.otf", 50);
+    textSurf = TTF_RenderText_Solid(scoreFont, "The", fontCol);
     textMsg = SDL_CreateTextureFromSurface(renderer, textSurf);
     
-    //textRect.x = 0;
-    //textRect.y = 0;
-    textRect.w = 100;
-    //textRect.h = 100;
-    SDL_QueryTexture(textMsg, NULL, NULL, &src.w, &src.h);
+    textRect.x = screenWidth / 2 - 200;
+    textRect.y = screenHeight / 2 - 200;
+    
+    textRect.w = 1500;
+    textRect.h = 1500;
+
+    SDL_QueryTexture(textMsg, NULL, NULL, &textRect.w, &textRect.h);
 
     SDL_SetRenderDrawColor(renderer, 224, 57, 45, 255);
     SDL_RenderClear(renderer);
     SDL_RenderPresent(renderer);
 
     img = IMG_LoadTexture(renderer, "DevAssets/Textures/wickedwing.png");
-    SDL_QueryTexture(img, NULL, NULL, &w, &h); // get the width and height of the texture
-    // put the location where we want the texture to be drawn into a rectangle
-    // I'm also scaling the texture 2x simply by setting the width and height
+
+    SDL_QueryTexture(img, NULL, NULL, &w, &h);
     texr.x = screenWidth / 2 - 150; texr.y = screenHeight / 2 - 100; texr.w = w / 2; texr.h = h / 2;
 }
 
@@ -70,7 +73,7 @@ void Game::Forever()
     SDL_RenderClear(renderer);
     // copy the texture to the rendering context
     SDL_RenderCopy(renderer, img, NULL, &texr);
-    //SDL_RenderCopy(renderer, textMsg, NULL, &textRect);
+    SDL_RenderCopy(renderer, textMsg, NULL, &textRect);
     // flip the backbuffer
     // this means that everything that we prepared behind the screens is actually shown
     SDL_RenderPresent(renderer);

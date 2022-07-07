@@ -7,10 +7,7 @@ class GameManager : Game
 		int score;
 		void PlayerAction();
 
-		GameManager() 
-		{
-			Begin();
-		}
+		GameManager() { Begin(); }
 
 	protected:
 		void Begin();
