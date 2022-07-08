@@ -1,18 +1,21 @@
 #include "Headers/game.h"
+#include "Headers/text.h"
+#include "Headers/image.h"
+#include "Headers/audio.h"
 #include "Headers/gamemanager.h"
 #include <cmath>
 
-SDL_Texture* img;
-SDL_Surface* iconSurf = IMG_Load("DevAssets/Textures/colonel.png");
-SDL_Rect texr;
-
 GameManager gameManager;
+SDL_Surface* iconSurf = IMG_Load("DevAssets/Textures/colonel.png");
+Mix_Music* bgm;
+Mix_Chunk* noot;
 
-TTF_Font* scoreFont;
-SDL_Color fontCol = { 255, 255, 255 };
-SDL_Surface* textSurf;
+SDL_Color textCol = { 255, 255, 255 };
 SDL_Texture* textMsg;
 SDL_Rect textRect;
+
+Text* wtitle;
+Image* wWing;
 
 Game::Game()
 {
@@ -36,32 +39,31 @@ void Game::Run()
 void Game::Init(const char* title, int x, int y, int w, int h, Uint32 flags)
 {
     SDL_Init(SDL_INIT_EVERYTHING);
-    if (TTF_Init() < 0) Debug("Error");
+    if (TTF_Init() < 0) Debug("\nError Text");
+    if (Mix_OpenAudio(44100,MIX_DEFAULT_FORMAT, 2, 2048) < 0) Debug("\nError Music");
+    
     window = SDL_CreateWindow(title, x, y, w, h, flags);
+    renderer = SDL_CreateRenderer(window, -1, 0);
     
     SDL_SetWindowIcon(window, iconSurf);
-    renderer = SDL_CreateRenderer(window, -1, 0);
-
-    scoreFont = TTF_OpenFont("DevAssets/Fonts/OlivettiNeue.otf", 50);
-    textSurf = TTF_RenderText_Solid(scoreFont, "The", fontCol);
-    textMsg = SDL_CreateTextureFromSurface(renderer, textSurf);
     
-    textRect.x = screenWidth / 2 - 200;
-    textRect.y = screenHeight / 2 - 200;
-    
-    textRect.w = 1500;
-    textRect.h = 1500;
+    wtitle = new Text("Ranuts balls are smaller than his head", "DevAssets/Fonts/OlivettiNeue.otf", 30, textCol, renderer);
+    wtitle->SetTransform((screenWidth / 2 - 200), (screenHeight / 2 - 100), 1500, 1500);
+    wtitle->QueryText();
 
-    SDL_QueryTexture(textMsg, NULL, NULL, &textRect.w, &textRect.h);
+    wWing = new Image("DevAssets/Textures/wickedwing.png", renderer);
+    wWing->QueryText();
+    wWing->SetTransform(screenWidth, screenHeight, w, h);
+
+    bgm = Mix_LoadMUS("DevAssets/SFX/ov.mp3");
+    noot = Mix_LoadWAV("DevAssets/SFX/noto.wav");
+    Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
+    if (!Mix_PlayingMusic()) Mix_PlayMusic(bgm, -1);
+    
 
     SDL_SetRenderDrawColor(renderer, 224, 57, 45, 255);
     SDL_RenderClear(renderer);
     SDL_RenderPresent(renderer);
-
-    img = IMG_LoadTexture(renderer, "DevAssets/Textures/wickedwing.png");
-
-    SDL_QueryTexture(img, NULL, NULL, &w, &h);
-    texr.x = screenWidth / 2 - 150; texr.y = screenHeight / 2 - 100; texr.w = w / 2; texr.h = h / 2;
 }
 
 // Game loop.
@@ -71,12 +73,12 @@ void Game::Forever()
 
     // clear the screen
     SDL_RenderClear(renderer);
-    // copy the texture to the rendering context
-    SDL_RenderCopy(renderer, img, NULL, &texr);
-    SDL_RenderCopy(renderer, textMsg, NULL, &textRect);
-    // flip the backbuffer
-    // this means that everything that we prepared behind the screens is actually shown
+    
+    wWing->Draw();
+    wtitle->Draw();
+    
     SDL_RenderPresent(renderer);
+    
 }
 
 double distanceFromCursor()
@@ -85,7 +87,7 @@ double distanceFromCursor()
     int mouseY = 0;
     SDL_GetMouseState(&mouseX, &mouseY);
 
-    return sqrt(pow((texr.x + texr.w / 2) - mouseX, 2) + pow((texr.y + texr.h / 2) - mouseY, 2));
+    return sqrt(pow((wWing->rect.x + wWing->rect.w / 2) - mouseX, 2) + pow((wWing->rect.y + wWing->rect.h / 2) - mouseY, 2));
 }
 
 // Event handler.
@@ -109,6 +111,7 @@ void Game::ClickEvent()
     if (evnt.button.button == SDL_BUTTON_LEFT && distanceFromCursor() < 150)
     {
         gameManager.PlayerAction();
+        Mix_PlayChannel(-1, noot, 0);
         Debug(std::to_string(gameManager.score) + " ");
     }
     else if (evnt.button.button == SDL_BUTTON_RIGHT)
