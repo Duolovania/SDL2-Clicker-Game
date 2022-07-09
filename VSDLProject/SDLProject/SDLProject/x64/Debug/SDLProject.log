@@ -1,4 +1,4 @@
 ﻿  Game.cpp
-C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(80,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(82,17): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(127,17): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(163,5): warning C4065: switch statement contains 'default' but no 'case' labels
   SDLProject.vcxproj -> C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\x64\Debug\SDLProject.exe
