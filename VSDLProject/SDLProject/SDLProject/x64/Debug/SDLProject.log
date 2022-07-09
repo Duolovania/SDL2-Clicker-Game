@@ -1,4 +1,4 @@
 ﻿  Game.cpp
-Game.obj : error LNK2019: unresolved external symbol Mix_LoadWAV referenced in function "private: void __cdecl Game::Init(char const *,int,int,int,int,unsigned int)" (?Init@Game@@AEAAXPEBDHHHHI@Z)
-Game.obj : error LNK2019: unresolved external symbol Mix_PlayChannel referenced in function "private: void __cdecl Game::ClickEvent(void)" (?ClickEvent@Game@@AEAAXXZ)
-C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\x64\Debug\SDLProject.exe : fatal error LNK1120: 2 unresolved externals
+C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(80,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(82,17): warning C4305: '+=': truncation from 'double' to 'float'
+  SDLProject.vcxproj -> C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\x64\Debug\SDLProject.exe

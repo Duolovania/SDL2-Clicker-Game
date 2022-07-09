@@ -19,9 +19,10 @@ class Game
 
     private:
         void Init(const char* title, int x, int y, int w, int h, Uint32 flags); // Initializes window.
-        virtual void Forever(); // Game loop
+        virtual void Forever(float delta); // Game loop
         void HandleEvents();
         void ClickEvent();
+        void KeyEvent();
         
         SDL_Window* window;
         SDL_Renderer* renderer;
