@@ -13,6 +13,7 @@ GameManager gameManager;
 SDL_Surface* iconSurf = IMG_Load("DevAssets/Textures/colonel.png");
 Mix_Music* bgm;
 Mix_Chunk* noot;
+Mix_Chunk* fLick;
 
 SDL_Color textCol = { 255, 255, 255 };
 
@@ -44,12 +45,13 @@ void Game::Run()
     while (gameState != GameState::EXIT) Forever();
 
     Mix_FreeMusic(bgm);
+    Mix_FreeChunk(fLick);
     Mix_FreeChunk(noot);
-    SDL_DestroyWindow(window);
-    SDL_DestroyRenderer(renderer);
     SDL_DestroyTexture(wWing->img);
     SDL_DestroyTexture(prompt->msg);
     SDL_DestroyTexture(wtitle->msg);
+    SDL_DestroyWindow(window);
+    SDL_DestroyRenderer(renderer);
 }
 
 // Init window and renderer.
@@ -66,7 +68,7 @@ void Game::Init(const char* title, int x, int y, int w, int h, Uint32 flags)
     
     wtitle = std::make_unique<Text>(Text("DevAssets/Fonts/OlivettiNeue.otf", 30, textCol, renderer));
     wtitle->ModifyText("0");
-    wtitle->SetTransform((screenWidth / 2 - 480), (screenHeight / 2 - 270), 100, 100);
+    wtitle->SetTransform((screenWidth / 2 - 480), (screenHeight / 2 - 300), 100, 100);
     wtitle->QueryText();
 
     prompt = std::make_unique<Text>(Text("DevAssets/Fonts/font.ttf", 50, textCol, renderer));
@@ -80,7 +82,10 @@ void Game::Init(const char* title, int x, int y, int w, int h, Uint32 flags)
     wWing->SetTransform(screenWidth, screenHeight, w, h);
 
     bgm = Mix_LoadMUS("DevAssets/SFX/ov.mp3");
-    //noot = Mix_LoadWAV("DevAssets/SFX/noto.wav");
+    noot = Mix_LoadWAV("DevAssets/SFX/noto.wav");
+    fLick = Mix_LoadWAV("DevAssets/SFX/kfc.wav");
+
+    Mix_PlayChannel(-1, fLick, 0);
     Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
     if (!Mix_PlayingMusic()) Mix_PlayMusic(bgm, -1);
 
@@ -106,13 +111,14 @@ void Game::Forever()
     
     // Sine wave movement.
     wWing->SetY(((sin((time) * 10)) * 10) + 150); 
+    if (evnt.button.button == SDL_BUTTON_LEFT) wWing->Scale(((sin((time) * 10000)) * 10));
     prompt->SetX(((cos((time) * 20)) * 2) + 25);
 
     std::string strObj(std::to_string(gameManager.score));
     scorePtr = &strObj[0];
 
     wtitle->ModifyText(scorePtr);
-    wtitle->SetTransform((screenWidth / 2 - 480), (screenHeight / 2 - 270), 100, 100);
+    wtitle->SetTransform((screenWidth / 2 - 480), (screenHeight / 2 - 300), 100, 100);
 
     SDL_RenderPresent(renderer);
     _CrtDumpMemoryLeaks();
@@ -166,7 +172,7 @@ void Game::ClickEvent()
             if (distanceFromCursor() < 150)
             {
                 gameManager.PlayerAction();
-                //Mix_PlayChannel(-1, noot, 0);
+                Mix_PlayChannel(-1, noot, 0);
             }
             break;
     }
