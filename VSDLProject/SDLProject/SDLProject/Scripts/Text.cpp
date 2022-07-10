@@ -2,6 +2,7 @@
 
 Text::Text(const char* path, int size, SDL_Color col, SDL_Renderer* render)
 {
+	Game::Debug("->Text Object Successfully Instanced.");
 	renderer = render;
 	color = col;
 

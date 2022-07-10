@@ -19,7 +19,7 @@ class Game
         static void Debug(std::string log)
         { 
             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2);
-            std::cout << log;
+            std::cout << "\n" << log;
             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 4);
         }
 

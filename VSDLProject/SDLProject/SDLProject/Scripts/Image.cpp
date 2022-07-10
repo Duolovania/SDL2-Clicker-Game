@@ -2,11 +2,9 @@
 
 Image::Image(const char* path, SDL_Renderer* render)
 {
+	Game::Debug("->Image Object Successfully Instanced.");
 	renderer = render;
-	surf = IMG_Load(path);
-	img = IMG_LoadTexture(renderer, "DevAssets/Textures/wickedwing.png");
-
-	SDL_FreeSurface(surf);
+	if (path != nullptr) img = IMG_LoadTexture(renderer, path);
 }
 
 Image::~Image() {}
@@ -31,6 +29,12 @@ void Image::Draw()
 void Image::QueryText()
 {
 	SDL_QueryTexture(img, NULL, NULL, &rect.w, &rect.h);
+}
+
+void Image::Load(const char* path)
+{
+	if (img != nullptr) SDL_DestroyTexture(img);
+	img = IMG_LoadTexture(renderer, path);
 }
 
 void Image::MoveX(float steps)

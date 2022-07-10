@@ -7,24 +7,37 @@
 #include "Headers/gamemanager.h"
 #include <cmath>
 #include "crtdbg.h"
-#include <memory>
 
 GameManager gameManager;
 SDL_Surface* iconSurf = IMG_Load("DevAssets/Textures/colonel.png");
 Mix_Music* bgm;
 Mix_Chunk* noot;
 Mix_Chunk* fLick;
+Mix_Chunk* tick;
 
 SDL_Color textCol = { 255, 255, 255 };
 
-std::unique_ptr<Text> wtitle;
-std::unique_ptr<Text> prompt;
-std::unique_ptr<Image> wWing;
+Text wtitle;
+Text prompt;
+Text wKey;
+
+Image wWing;
+Image wSanders;
+Image wLogo;
+Image wBucket;
 
 int mouseY = 0;
 int mouseX = 0;
 
+bool gameRunning = false;
 const char* scorePtr;
+
+// Calculates distance from mouse cursor
+double distanceFromCursor(SDL_Rect obj)
+{
+    SDL_GetMouseState(&mouseX, &mouseY);
+    return sqrt(pow((obj.x + obj.w / 2) - mouseX, 2) + pow((obj.y + obj.h / 2) - mouseY, 2));
+}
 
 Game::Game()
 {
@@ -40,17 +53,23 @@ Game::~Game() {}
 // Called at launch.
 void Game::Run()
 {
-    Init("Please stop ordering Jumbo Bkts.", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenWidth, screenHeight, SDL_WINDOW_SHOWN);
-    Debug("Entry Point Reached");
+    Init("Finger Lickin' Good Experience", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenWidth, screenHeight, SDL_WINDOW_SHOWN);
+    Debug("Entry Point Reached.");
     while (gameState != GameState::EXIT) Forever();
 
     Mix_FreeMusic(bgm);
     Mix_FreeChunk(fLick);
     Mix_FreeChunk(noot);
-    SDL_DestroyTexture(wWing->img);
-    SDL_DestroyTexture(prompt->msg);
-    SDL_DestroyTexture(wtitle->msg);
+
+    SDL_DestroyTexture(wWing.img);
+    SDL_DestroyTexture(wSanders.img);
+    SDL_DestroyTexture(prompt.msg);
+    SDL_DestroyTexture(wtitle.msg);
+    SDL_DestroyTexture(wKey.msg);
+
     SDL_DestroyWindow(window);
+    TTF_CloseFont(wtitle.font);
+    TTF_CloseFont(prompt.font);
     SDL_DestroyRenderer(renderer);
 }
 
@@ -63,37 +82,51 @@ void Game::Init(const char* title, int x, int y, int w, int h, Uint32 flags)
     
     window = SDL_CreateWindow(title, x, y, w, h, flags);
     renderer = SDL_CreateRenderer(window, -1, 0);
-    
     SDL_SetWindowIcon(window, iconSurf);
     
-    wtitle = std::make_unique<Text>(Text("DevAssets/Fonts/OlivettiNeue.otf", 30, textCol, renderer));
-    wtitle->ModifyText("0");
-    wtitle->SetTransform((screenWidth / 2 - 480), (screenHeight / 2 - 300), 100, 100);
-    wtitle->QueryText();
+    wLogo = Image("DevAssets/Textures/DLogo.png", renderer);
+    wLogo.QueryText();
+    wLogo.SetTransform(screenWidth - 250, screenHeight + 50, w * 2, h / 2);
 
-    prompt = std::make_unique<Text>(Text("DevAssets/Fonts/font.ttf", 50, textCol, renderer));
-    prompt->ModifyText("Click the Chicken");
-    prompt->SetTransform(screenWidth / 2 - 480, screenHeight / 2 + 230, 100, 100);
-    prompt->QueryText();
+    wBucket = Image("DevAssets/Textures/i.png", renderer);
+    wBucket.QueryText();
+    wBucket.SetTransform(screenWidth + 1100, screenHeight + 600, w / 3.0, h / 3.5);
+
+    wSanders = Image("DevAssets/Textures/buff.png", renderer);
+    
+    wSanders.QueryText();
+    wSanders.SetTransform(screenWidth - 1400, screenHeight - 400, w * 6, h * 3);
+
+    wKey = Text("DevAssets/Fonts/lemonMilk.otf", 60, textCol, renderer);
+    wKey.ModifyText("Press any Key to Begin.");
+    wKey.SetTransform((screenWidth / 2 - 400), (screenHeight / 2 - 150), 100, 100);
+    wKey.QueryText();
+
+    wtitle = Text("DevAssets/Fonts/OlivettiNeue.otf", 30, textCol, renderer);
+    wtitle.ModifyText("0");
+    wtitle.SetTransform((screenWidth / 2 - 480), (screenHeight / 2 - 300), 100, 100);
+    wtitle.QueryText();
+
+    prompt = Text("DevAssets/Fonts/font.ttf", 50, textCol, renderer);
+    prompt.ModifyText("Click the Chicken");
+    prompt.SetTransform(screenWidth / 2 - 480, screenHeight / 2 + 230, 100, 100);
+    prompt.QueryText();
 
 
-    wWing = std::make_unique<Image>(Image("DevAssets/Textures/wickedwing.png", renderer));
-    wWing->QueryText();
-    wWing->SetTransform(screenWidth, screenHeight, w, h);
+    wWing = Image("DevAssets/Textures/wickedwing.png", renderer);
+    wWing.QueryText();
+    wWing.SetTransform(screenWidth, screenHeight, w, h);
 
     bgm = Mix_LoadMUS("DevAssets/SFX/ov.mp3");
-    noot = Mix_LoadWAV("DevAssets/SFX/noto.wav");
+    noot = Mix_LoadWAV("DevAssets/SFX/Click.wav");
     fLick = Mix_LoadWAV("DevAssets/SFX/kfc.wav");
-
-    Mix_PlayChannel(-1, fLick, 0);
-    Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
-    if (!Mix_PlayingMusic()) Mix_PlayMusic(bgm, -1);
+    tick = Mix_LoadWAV("DevAssets/SFX/tick.wav");
 
     SDL_FreeSurface(iconSurf);
     
-    SDL_SetRenderDrawColor(renderer, 224, 57, 45, 255);
     SDL_RenderClear(renderer);
     SDL_RenderPresent(renderer);
+    Mix_PlayChannel(-1, tick, 0);
 }
 
 // Game loop.
@@ -104,34 +137,62 @@ void Game::Forever()
     // clear the screen
     SDL_RenderClear(renderer);
     
-    // Refreshing textures.
-    wWing->Draw(); 
-    wtitle->Draw();
-    prompt->Draw();
-    
-    // Sine wave movement.
-    wWing->SetY(((sin((time) * 10)) * 10) + 150); 
-    if (evnt.button.button == SDL_BUTTON_LEFT) wWing->Scale(((sin((time) * 10000)) * 10));
-    prompt->SetX(((cos((time) * 20)) * 2) + 25);
+    if (gameRunning)
+    {
+        // Refreshing textures.
+        wSanders.Draw();
+        wWing.Draw();
+        wtitle.Draw();
+        prompt.Draw();
+        wBucket.Draw();
 
-    std::string strObj(std::to_string(gameManager.score));
-    scorePtr = &strObj[0];
+        // Sine wave movement.
+        wWing.SetY(((sin((time) * 10)) * 10) + 150);
+        prompt.SetX(((cos((time) * 20)) * 2) + 25);
+        SDL_SetTextureAlphaMod(wSanders.img, ((sin((time) * 20)) * 10) + 150);
 
-    wtitle->ModifyText(scorePtr);
-    wtitle->SetTransform((screenWidth / 2 - 480), (screenHeight / 2 - 300), 100, 100);
+        //if (evnt.button.button == SDL_BUTTON_LEFT && distanceFromCursor() < 150) 
+
+        std::string strObj(std::to_string(gameManager.score));
+        scorePtr = &strObj[0];
+
+        wtitle.ModifyText(scorePtr);
+        wtitle.SetTransform((screenWidth / 2 - 480), (screenHeight / 2 - 300), 100, 100);
+
+        SDL_SetRenderDrawColor(renderer, 204, 41, 54, 255);
+
+        if (distanceFromCursor(wBucket.rect) < 40)
+        {
+            if (gameManager.score >= gameManager.upgradeCost) wBucket.Load("DevAssets/Textures/a.png");
+            else wBucket.Load("DevAssets/Textures/na.png");
+        }
+        else
+        {
+            wBucket.Load("DevAssets/Textures/i.png");
+        }
+
+        if (!Mix_PlayingMusic())
+        {
+            Mix_PlayChannel(-1, fLick, 0);
+            Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
+            Mix_PlayMusic(bgm, -1);
+        }
+    }
+    else
+    {
+        wLogo.Draw();
+        wKey.Draw();
+
+        wKey.SetY(((sin((time) * 10)) * 2) + 400);
+        wKey.SetX(((cos((time) * 10)) * 2) + 150);
+        SDL_SetRenderDrawColor(renderer, 26, 24, 27, 255);
+    }
 
     SDL_RenderPresent(renderer);
     _CrtDumpMemoryLeaks();
     
     delta += 1;
     time += 0.01;
-}
-
-// Calculates distance from mouse cursor
-double distanceFromCursor()
-{
-    SDL_GetMouseState(&mouseX, &mouseY);
-    return sqrt(pow((wWing->rect.x + wWing->rect.w / 2) - mouseX, 2) + pow((wWing->rect.y + wWing->rect.h / 2) - mouseY, 2));
 }
 
 // Event handler.
@@ -145,7 +206,7 @@ void Game::HandleEvents()
             gameState = GameState::EXIT;
             break;
         case SDL_MOUSEBUTTONDOWN:
-            ClickEvent();
+            if (gameRunning) ClickEvent();
             break;
         case SDL_KEYDOWN:
             KeyEvent();
@@ -158,7 +219,11 @@ void Game::KeyEvent()
 {
     switch (evnt.key.keysym.sym)
     {
+        case SDLK_SPACE:
+            
+            break;
         default:
+            if (!gameRunning) gameRunning = true;
             break;
     }
 }
@@ -169,10 +234,15 @@ void Game::ClickEvent()
     switch (evnt.button.button)
     {
         case (SDL_BUTTON_LEFT):
-            if (distanceFromCursor() < 150)
+            if (distanceFromCursor(wWing.rect) < 150)
             {
                 gameManager.PlayerAction();
                 Mix_PlayChannel(-1, noot, 0);
+            }
+            if (distanceFromCursor(wBucket.rect) < 40)
+            {
+                gameManager.Upgrade();
+                Mix_PlayChannel(-1, tick, 0);
             }
             break;
     }

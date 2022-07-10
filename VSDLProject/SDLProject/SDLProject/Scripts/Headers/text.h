@@ -1,11 +1,12 @@
 #pragma once
 #include "SDL.h"
 #include "SDL_ttf.h"
+#include "game.h"
 
 class Text
 {
 	public:
-		Text(const char* path, int size, SDL_Color col, SDL_Renderer* render);
+		Text(const char* path = nullptr, int size = 0, SDL_Color col = {255, 255, 255}, SDL_Renderer* render = nullptr);
 		~Text();
 
 		void SetTransform(int x, int y, int w, int h);

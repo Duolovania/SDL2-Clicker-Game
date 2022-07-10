@@ -1,10 +1,12 @@
 #pragma once
 #include "SDl_image.h"
+#include "game.h"
+#include <vector>
 
 class Image
 {
 	public:
-		Image(const char* path, SDL_Renderer* render);
+		Image(const char* path = nullptr, SDL_Renderer* render = nullptr);
 		~Image();
 
 		void SetTransform(int x, int y, int w, int h);
@@ -18,9 +20,9 @@ class Image
 		void SetX(float newPos);
 
 		void Scale(float size);
+		void Load(const char* path);
 
 		SDL_Texture* img;
-		SDL_Surface* surf = IMG_Load("DevAssets/Textures/colonel.png");
 		SDL_Rect rect;
 		SDL_Renderer* renderer;
 
