@@ -54,8 +54,11 @@ Game::~Game() {}
 void Game::Run()
 {
     Init("Finger Lickin' Good Experience", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenWidth, screenHeight, SDL_WINDOW_SHOWN);
-    Debug("Entry Point Reached.");
-    while (gameState != GameState::EXIT) Forever();
+    Debug("Entry Point Reached. Running Version 1.0");
+    while (gameState != GameState::EXIT)
+    {
+        Forever();
+    }
 
     Mix_FreeMusic(bgm);
     Mix_FreeChunk(fLick);
@@ -133,7 +136,8 @@ void Game::Init(const char* title, int x, int y, int w, int h, Uint32 flags)
 void Game::Forever()
 {
     HandleEvents();
-    
+    SDL_Delay(16);
+
     // clear the screen
     SDL_RenderClear(renderer);
     
