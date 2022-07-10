@@ -1,6 +1,1 @@
-﻿  Game.cpp
-C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(93,77): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(93,68): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(152,72): warning C4244: 'argument': conversion from 'float' to 'Uint8', possible loss of data
-C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(195,17): warning C4305: '+=': truncation from 'double' to 'float'
-  SDLProject.vcxproj -> C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\x64\Debug\SDLProject.exe
+﻿  SDLProject.vcxproj -> C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\x64\Debug\SDLProject.exe

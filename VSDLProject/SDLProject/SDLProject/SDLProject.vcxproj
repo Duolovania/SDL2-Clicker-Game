@@ -76,13 +76,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\lib\x86;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2main.lib;SDL2_image.lib;SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\lib\x64\optional;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\lib\x86;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -93,12 +93,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\lib\x64\optional;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\lib\x64;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -107,13 +110,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\include;C:\Users\ryhan\Downloads\Software\Installers\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\include;C:\Users\ryhan\Downloads\Software\Installers\SDL2_image-devel-2.0.5-VC\SDL2\include;C:\Users\ryhan\Downloads\Software\Installers\SDL2-devel-2.0.22-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\include;C:\Users\ryhan\Downloads\Software\Installers\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\include;C:\Users\ryhan\Downloads\Software\Installers\SDL2_image-devel-2.0.5-VC\SDL2\include;C:\Users\ryhan\Downloads\Software\Installers\SDL2-devel-2.0.22-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\lib\x64\optional;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\lib\x64;C:\Users\ryhan\Downloads\Software\Installers\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\lib\x64;C:\Users\ryhan\Downloads\Software\Installers\SDL2_image-devel-2.0.5-VC\SDL2\lib\x64;C:\Users\ryhan\Downloads\Software\Installers\SDL2-devel-2.0.22-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\lib\x64\optional;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\lib\x64\optional;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\lib\x64;C:\Users\ryhan\Downloads\Software\Installers\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\lib\x64;C:\Users\ryhan\Downloads\Software\Installers\SDL2_image-devel-2.0.5-VC\SDL2\lib\x64;C:\Users\ryhan\Downloads\Software\Installers\SDL2-devel-2.0.22-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -124,12 +127,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\include;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\lib\x64\optional;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_image-devel-2.0.5-VC\SDL2\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_mixer-devel-2.6.0-VC\SDL2_mixer-2.6.0\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2_ttf-devel-2.0.18-VC\SDL2_ttf-2.0.18\lib\x64;C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
