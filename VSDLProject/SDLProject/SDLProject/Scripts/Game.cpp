@@ -115,7 +115,6 @@ void Game::Init(const char* title, int x, int y, int w, int h, Uint32 flags)
     prompt.SetTransform(screenWidth / 2 - 480, screenHeight / 2 + 230, 100, 100);
     prompt.QueryText();
 
-
     wWing = Image("DevAssets/Textures/wickedwing.png", renderer);
     wWing.QueryText();
     wWing.SetTransform(screenWidth, screenHeight, w, h);
