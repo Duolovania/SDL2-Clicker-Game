@@ -26,25 +26,23 @@ Image wSanders;
 Image wLogo;
 Image wBucket;
 
-int mouseY = 0;
-int mouseX = 0;
+Image oliver;
+
+Vector2 mousePos;
 
 bool gameRunning = false;
 const char* scorePtr;
 
-// Calculates distance from mouse cursor
-double distanceFromCursor(SDL_Rect obj)
-{
-    SDL_GetMouseState(&mouseX, &mouseY);
-    return sqrt(pow((obj.x + obj.w / 2) - mouseX, 2) + pow((obj.y + obj.h / 2) - mouseY, 2));
-}
+Vector2 wingUpScale;
 
 Game::Game()
 {
     window = nullptr;
     renderer = nullptr;
+
     screenHeight = 600;
     screenWidth = 1024;
+
     gameState = GameState::PLAY;
 }
 
@@ -64,15 +62,22 @@ void Game::Run()
     Mix_FreeChunk(fLick);
     Mix_FreeChunk(noot);
 
-    SDL_DestroyTexture(wWing.img);
-    SDL_DestroyTexture(wSanders.img);
-    SDL_DestroyTexture(prompt.msg);
-    SDL_DestroyTexture(wtitle.msg);
-    SDL_DestroyTexture(wKey.msg);
+    //SDL_DestroyTexture(wWing.img);
+    //SDL_DestroyTexture(wSanders.img);
+    //SDL_DestroyTexture(prompt.msg);
+    //SDL_DestroyTexture(wtitle.msg);
+    //SDL_DestroyTexture(wKey.msg);
+    //SDL_DestroyTexture(oliver.img);
+
+    for (auto gObj : GameObject::gObjs)
+    {
+        gObj->OnGameEnd();
+        //Game::Debug("pointuh problemo");
+    }
 
     SDL_DestroyWindow(window);
-    TTF_CloseFont(wtitle.font);
-    TTF_CloseFont(prompt.font);
+    //TTF_CloseFont(wtitle.font);
+    //TTF_CloseFont(prompt.font);
     SDL_DestroyRenderer(renderer);
 }
 
@@ -87,37 +92,33 @@ void Game::Init(const char* title, int x, int y, int w, int h, Uint32 flags)
     renderer = SDL_CreateRenderer(window, -1, 0);
     SDL_SetWindowIcon(window, iconSurf);
     
-    wLogo = Image("DevAssets/Textures/DLogo.png", renderer);
-    wLogo.QueryText();
+    wLogo = Image("DLogo.png", renderer);
     wLogo.SetTransform(screenWidth - 250, screenHeight + 50, w * 2, h / 2);
 
-    wBucket = Image("DevAssets/Textures/i.png", renderer);
-    wBucket.QueryText();
+    wBucket = Image("i.png", renderer);
     wBucket.SetTransform(screenWidth + 1100, screenHeight + 600, w / 3.0, h / 3.5);
 
-    wSanders = Image("DevAssets/Textures/buff.png", renderer);
-    
-    wSanders.QueryText();
+    wSanders = Image("buff.png", renderer);
     wSanders.SetTransform(screenWidth - 1400, screenHeight - 400, w * 6, h * 3);
+
+    oliver = Image("oliv.JPG", renderer);
+    oliver.SetTransform(screenWidth * 2, screenHeight, w * 6, h * 3);
 
     wKey = Text("DevAssets/Fonts/lemonMilk.otf", 60, textCol, renderer);
     wKey.ModifyText("Press any Key to Begin.");
     wKey.SetTransform((screenWidth / 2 - 400), (screenHeight / 2 - 150), 100, 100);
-    wKey.QueryText();
 
     wtitle = Text("DevAssets/Fonts/OlivettiNeue.otf", 30, textCol, renderer);
     wtitle.ModifyText("0");
     wtitle.SetTransform((screenWidth / 2 - 480), (screenHeight / 2 - 300), 100, 100);
-    wtitle.QueryText();
 
     prompt = Text("DevAssets/Fonts/font.ttf", 50, textCol, renderer);
     prompt.ModifyText("Click the Chicken");
     prompt.SetTransform(screenWidth / 2 - 480, screenHeight / 2 + 230, 100, 100);
-    prompt.QueryText();
 
-    wWing = Image("DevAssets/Textures/wickedwing.png", renderer);
-    wWing.QueryText();
+    wWing = Image("wickedwing.png", renderer);
     wWing.SetTransform(screenWidth, screenHeight, w, h);
+    wingUpScale = Vector2::Multiply(wWing.transform.scale, Vector2::Uniform(1.2f));
 
     bgm = Mix_LoadMUS("DevAssets/SFX/ov.mp3");
     noot = Mix_LoadWAV("DevAssets/SFX/Click.wav");
@@ -144,27 +145,35 @@ void Game::Forever()
     {
         // Refreshing textures.
         wSanders.Draw();
+        oliver.Draw();
         wWing.Draw();
         wtitle.Draw();
         prompt.Draw();
         wBucket.Draw();
 
         // Sine wave movement.
-        wWing.SetY(((sin((time) * 10)) * 10) + 150);
-        prompt.SetX(((cos((time) * 20)) * 2) + 25);
-        SDL_SetTextureAlphaMod(wSanders.img, ((sin((time) * 20)) * 10) + 150);
+        wWing.transform.position.y = ((sin((time) * 10)) * 10) + 150;
+        prompt.transform.position.x = ((cos((time) * 20)) * 2) + 25;
+
+        wSanders.SetAlpha(((sin((time) * 20)) * 10) + 150);
 
         //if (evnt.button.button == SDL_BUTTON_LEFT && distanceFromCursor() < 150) 
+        SDL_GetMouseState(&mousePos.x, &mousePos.y);
+
+        if (wWing.transform.DistanceTo(mousePos) < 150)
+        {
+            wWing.transform.scale = wingUpScale;
+        }
 
         std::string strObj(std::to_string(gameManager.score));
         scorePtr = &strObj[0];
 
         wtitle.ModifyText(scorePtr);
-        wtitle.SetTransform((screenWidth / 2 - 480), (screenHeight / 2 - 300), 100, 100);
+        wtitle.transform = Transform(Vector2((screenWidth / 2 - 480), (screenHeight / 2 - 300)), Vector2::Uniform(100));
 
         SDL_SetRenderDrawColor(renderer, 204, 41, 54, 255);
 
-        if (distanceFromCursor(wBucket.rect) < 40)
+        if (wBucket.transform.DistanceTo(mousePos) < 40)
         {
             if (gameManager.score >= gameManager.upgradeCost) wBucket.Load("DevAssets/Textures/a.png");
             else wBucket.Load("DevAssets/Textures/na.png");
@@ -186,8 +195,7 @@ void Game::Forever()
         wLogo.Draw();
         wKey.Draw();
 
-        wKey.SetY(((sin((time) * 10)) * 2) + 400);
-        wKey.SetX(((cos((time) * 10)) * 2) + 150);
+        wKey.transform.position = Vector2((((sin((time) * 10)) * 2) + 400), ((cos((time) * 10)) * 2) + 150);
         SDL_SetRenderDrawColor(renderer, 26, 24, 27, 255);
     }
 
@@ -223,7 +231,11 @@ void Game::KeyEvent()
     switch (evnt.key.keysym.sym)
     {
         case SDLK_SPACE:
-            
+            if (gameRunning)
+            {
+                gameManager.PlayerAction();
+                Mix_PlayChannel(-1, noot, 0);
+            }
             break;
         default:
             if (!gameRunning) gameRunning = true;
@@ -237,12 +249,12 @@ void Game::ClickEvent()
     switch (evnt.button.button)
     {
         case (SDL_BUTTON_LEFT):
-            if (distanceFromCursor(wWing.rect) < 150)
+            if (wWing.transform.DistanceTo(mousePos) < 150)
             {
                 gameManager.PlayerAction();
                 Mix_PlayChannel(-1, noot, 0);
             }
-            if (distanceFromCursor(wBucket.rect) < 40)
+            if (wBucket.transform.DistanceTo(mousePos) < 40)
             {
                 gameManager.Upgrade();
                 Mix_PlayChannel(-1, tick, 0);

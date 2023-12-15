@@ -1,10 +1,15 @@
 ﻿  Game.cpp
-C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(96,77): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(96,68): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(155,72): warning C4244: 'argument': conversion from 'float' to 'Uint8', possible loss of data
-C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(198,17): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(99,77): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(99,68): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(155,64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(156,64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(158,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(198,102): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(198,69): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\GameEngine\VSDLProject\SDLProject\SDLProject\Scripts\Game.cpp(206,17): warning C4305: '+=': truncation from 'double' to 'float'
+  Text.cpp
   Generating code
-  21 of 144 functions (14.6%) were compiled, the rest were copied from previous compilation.
+  1 of 233 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

@@ -1,6 +1,6 @@
 #include "Headers/text.h"
 
-Text::Text(const char* path, int size, SDL_Color col, SDL_Renderer* render)
+Text::Text(const char* path, int size, SDL_Color col, SDL_Renderer* render) : transform(Vector2(), Vector2())
 {
 	Game::Debug("->Text Object Successfully Instanced.");
 	renderer = render;
@@ -8,28 +8,29 @@ Text::Text(const char* path, int size, SDL_Color col, SDL_Renderer* render)
 
 	font = TTF_OpenFont(path, size);
 	ModifyText("New Text");
+
+	SDL_QueryTexture(msg, NULL, NULL, &rect.w, &rect.h);
+	GameObject::gObjs.push_back(this);
 }
 
 Text::~Text() {}
 
-void Text::SetTransform(int x, int y, int w, int h)
-{
-	rect.x = x;
-	rect.y = y;
+//void Text::SetTransform(int x, int y, int w, int h)
+//{
+//	transform.position = Vector2(x, y);
+//	transform.scale = Vector2(w, h);
+//}
 
-	rect.w = w;
-	rect.h = h;
-}
-
-void Text::QueryText()
-{
-	SDL_QueryTexture(msg, NULL, NULL, &rect.w, &rect.h);
-}
-
-void Text::Draw()
-{
-	SDL_RenderCopy(renderer, msg, NULL, &rect);
-}
+//void Text::Draw()
+//{
+//	rect.x = transform.position.x;
+//	rect.y = transform.position.y;
+//
+//	rect.w = transform.scale.x;
+//	rect.h = transform.scale.y;
+//
+//	SDL_RenderCopy(renderer, msg, NULL, &rect);
+//}
 
 void Text::ModifyText(const char* newText)
 {
@@ -40,22 +41,8 @@ void Text::ModifyText(const char* newText)
 	SDL_FreeSurface(surf);
 }
 
-void Text::MoveX(float steps)
-{
-	rect.x += steps;
-}
-
-void Text::MoveY(float steps)
-{
-	rect.y += -steps;
-}
-
-void Text::SetY(float newPos)
-{
-	rect.y = newPos;
-}
-
-void Text::SetX(float newPos)
-{
-	rect.x = newPos;
-}
+//void Text::OnGameEnd()
+//{
+//	if (msg != nullptr) SDL_DestroyTexture(msg);
+//	TTF_CloseFont(font);
+//}

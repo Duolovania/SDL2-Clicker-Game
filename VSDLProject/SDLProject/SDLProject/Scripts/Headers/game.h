@@ -4,6 +4,8 @@
 #include "SDL.h"
 #include <string>
 #include "windows.h"
+#include "transform.h"
+#include <vector>
 
 enum class GameState { PLAY, EXIT };
 
@@ -16,6 +18,7 @@ class Game
         SDL_Event evnt;
        
         void Run(); // Runs program.
+
         static void Debug(std::string log)
         { 
             SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 2);
@@ -26,6 +29,7 @@ class Game
     private:
         void Init(const char* title, int x, int y, int w, int h, Uint32 flags); // Initializes window.
         virtual void Forever(); // Game loop
+
         void HandleEvents();
         void ClickEvent();
         void KeyEvent();

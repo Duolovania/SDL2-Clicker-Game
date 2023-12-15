@@ -1,34 +1,47 @@
 #include "Headers/image.h"
 
-Image::Image(const char* path, SDL_Renderer* render)
+Image::Image(std::string path, SDL_Renderer* render) : transform(Vector2(), Vector2())
 {
-	Game::Debug("->Image Object Successfully Instanced.");
-	renderer = render;
-	if (path != nullptr) img = IMG_LoadTexture(renderer, path);
+	if (path != "")
+	{
+		std::string combinedPath = "DevAssets/Textures/" + path;
+
+		const char* newPath = combinedPath.c_str();
+		std::string debugPath = newPath;
+
+		std::string newLog = (std::string)"->Image Object: " + debugPath + " Successfully Loaded.";
+		Game::Debug(newLog);
+
+		renderer = render;
+		
+		img = IMG_LoadTexture(renderer, newPath);
+		SDL_QueryTexture(img, NULL, NULL, &rect.w, &rect.h);
+		GameObject::gObjs.push_back(this);
+	}
 }
 
 Image::~Image() {}
 
 void Image::SetTransform(int x, int y, int w, int h)
 {
-	rect.x = x / 2 - 150; 
-	rect.y = y / 2 - 100;
-
-	scaleX = w / 3.5;
-	scaleY = h / 2;
-
-	rect.w = scaleX; 
-	rect.h = scaleY;
+	transform.position = Vector2(x / 2 - 150, y / 2 - 100);
+	transform.scale = Vector2(w / 3.5, h / 2);
 }
 
 void Image::Draw()
 {
+	rect.x = transform.position.x;
+	rect.y = transform.position.y;
+
+	rect.w = transform.scale.x;
+	rect.h = transform.scale.y;
+
 	SDL_RenderCopy(this->renderer, img, NULL, &this->rect);
 }
 
-void Image::QueryText()
+void Image::SetAlpha(int newAlpha)
 {
-	SDL_QueryTexture(img, NULL, NULL, &rect.w, &rect.h);
+	SDL_SetTextureAlphaMod(img, newAlpha);
 }
 
 void Image::Load(const char* path)
@@ -37,28 +50,7 @@ void Image::Load(const char* path)
 	img = IMG_LoadTexture(renderer, path);
 }
 
-void Image::MoveX(float steps)
-{
-	rect.x += steps;
-}
-
-void Image::MoveY(float steps)
-{
-	rect.y += -steps;
-}
-
-void Image::SetY(float newPos)
-{
-	rect.y = newPos;
-}
-
-void Image::SetX(float newPos)
-{
-	rect.x = newPos;
-}
-
-void Image::Scale(float size)
-{
-	rect.w += size;
-	rect.h += size;
-}
+//void Image::OnGameEnd()
+//{
+//	if (img != nullptr) SDL_DestroyTexture(img);
+//}

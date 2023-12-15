@@ -141,18 +141,24 @@
   <ItemGroup>
     <ClCompile Include="Scripts\Game.cpp" />
     <ClCompile Include="Scripts\GameManager.cpp" />
+    <ClCompile Include="Scripts\GameObject.cpp" />
     <ClCompile Include="Scripts\Image.cpp" />
     <ClCompile Include="Scripts\Source.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Ryhan Khan\Downloads\Software\Installers\SDL\SDL2-devel-2.0.22-VC\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="Scripts\Text.cpp" />
+    <ClCompile Include="Scripts\Transform.cpp" />
+    <ClCompile Include="Scripts\Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scripts\Headers\audio.h" />
     <ClInclude Include="Scripts\Headers\game.h" />
     <ClInclude Include="Scripts\Headers\gamemanager.h" />
+    <ClInclude Include="Scripts\Headers\gameobject.h" />
     <ClInclude Include="Scripts\Headers\text.h" />
     <ClInclude Include="Scripts\Headers\image.h" />
+    <ClInclude Include="Scripts\Headers\transform.h" />
+    <ClInclude Include="Scripts\Headers\vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
