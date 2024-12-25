@@ -10,4 +10,3 @@ This project was made as a test for game development without a game engine. The 
 ## Important Information:
 * The entry point for the application is "Source.cpp".
 * The main game logic is under "Game.cpp".
-* Most of the game logic is located in the "Forever" method (which is run frame-by-frame similarly to most game engines).
