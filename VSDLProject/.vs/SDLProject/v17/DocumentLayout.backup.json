@@ -1,0 +1,195 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\audio.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|solutionrelative:SDLProject\\Scripts\\Headers\\audio.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|solutionrelative:SDLProject\\Scripts\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|solutionrelative:SDLProject\\Scripts\\Headers\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|solutionrelative:SDLProject\\Scripts\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\text.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|solutionrelative:SDLProject\\Scripts\\Headers\\text.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Text.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|solutionrelative:SDLProject\\Scripts\\Text.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Image.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|solutionrelative:SDLProject\\Scripts\\Image.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|solutionrelative:SDLProject\\Scripts\\Headers\\image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|solutionrelative:SDLProject\\Scripts\\GameObject.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\gameobject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4A462130-4559-40A6-A4F1-F5B3BE2DAF43}|SDLProject\\SDLProject.vcxproj|solutionrelative:SDLProject\\Scripts\\Headers\\gameobject.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "audio.h",
+              "DocumentMoniker": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\audio.h",
+              "RelativeDocumentMoniker": "SDLProject\\Scripts\\Headers\\audio.h",
+              "ToolTip": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\audio.h",
+              "RelativeToolTip": "SDLProject\\Scripts\\Headers\\audio.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-25T15:52:07.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Source.cpp",
+              "DocumentMoniker": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Source.cpp",
+              "RelativeDocumentMoniker": "SDLProject\\Scripts\\Source.cpp",
+              "ToolTip": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Source.cpp",
+              "RelativeToolTip": "SDLProject\\Scripts\\Source.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-25T15:45:33.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "game.h",
+              "DocumentMoniker": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\game.h",
+              "RelativeDocumentMoniker": "SDLProject\\Scripts\\Headers\\game.h",
+              "ToolTip": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\game.h",
+              "RelativeToolTip": "SDLProject\\Scripts\\Headers\\game.h",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-25T15:45:06.724Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "image.h",
+              "DocumentMoniker": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\image.h",
+              "RelativeDocumentMoniker": "SDLProject\\Scripts\\Headers\\image.h",
+              "ToolTip": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\image.h",
+              "RelativeToolTip": "SDLProject\\Scripts\\Headers\\image.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAIwA4AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-25T15:45:06.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Game.cpp",
+              "DocumentMoniker": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Game.cpp",
+              "RelativeDocumentMoniker": "SDLProject\\Scripts\\Game.cpp",
+              "ToolTip": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Game.cpp",
+              "RelativeToolTip": "SDLProject\\Scripts\\Game.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-25T15:45:06.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "gameobject.h",
+              "DocumentMoniker": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\gameobject.h",
+              "RelativeDocumentMoniker": "SDLProject\\Scripts\\Headers\\gameobject.h",
+              "ToolTip": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\gameobject.h",
+              "RelativeToolTip": "SDLProject\\Scripts\\Headers\\gameobject.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-25T15:45:06.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Text.cpp",
+              "DocumentMoniker": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Text.cpp",
+              "RelativeDocumentMoniker": "SDLProject\\Scripts\\Text.cpp",
+              "ToolTip": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Text.cpp",
+              "RelativeToolTip": "SDLProject\\Scripts\\Text.cpp",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACsAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-25T15:45:06.771Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "text.h",
+              "DocumentMoniker": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\text.h",
+              "RelativeDocumentMoniker": "SDLProject\\Scripts\\Headers\\text.h",
+              "ToolTip": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Headers\\text.h",
+              "RelativeToolTip": "SDLProject\\Scripts\\Headers\\text.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-25T15:45:06.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GameObject.cpp",
+              "DocumentMoniker": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\GameObject.cpp",
+              "RelativeDocumentMoniker": "SDLProject\\Scripts\\GameObject.cpp",
+              "ToolTip": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\GameObject.cpp",
+              "RelativeToolTip": "SDLProject\\Scripts\\GameObject.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-25T15:45:06.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Image.cpp",
+              "DocumentMoniker": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Image.cpp",
+              "RelativeDocumentMoniker": "SDLProject\\Scripts\\Image.cpp",
+              "ToolTip": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\SDLProject\\Scripts\\Image.cpp",
+              "RelativeToolTip": "SDLProject\\Scripts\\Image.cpp",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACkAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-25T15:45:06.86Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

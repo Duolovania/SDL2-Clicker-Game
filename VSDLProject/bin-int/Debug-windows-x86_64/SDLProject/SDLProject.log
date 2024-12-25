@@ -1,0 +1,19 @@
+﻿cl : command line  warning D9025: overriding '/MTd' with '/MDd'
+  Game.cpp
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(99,77): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(99,68): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(155,64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(156,64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(158,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(198,102): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(198,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(206,13): warning C4305: '+=': truncation from 'double' to 'float'
+  GameManager.cpp
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\GameManager.cpp(20,23): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  GameObject.cpp
+  Image.cpp
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Image.cpp(28,30): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Source.cpp
+  Text.cpp
+  Generating Code...
+  SDLProject.vcxproj -> C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\bin\Debug-windows-x86_64\SDLProject\SDLProject.exe

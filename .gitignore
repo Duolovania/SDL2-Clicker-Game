@@ -1,2 +1,5 @@
 
 VSDLProject/SDLProject/.vs/SDLProject/v17/ipch/AutoPCH/38a988ac54f4ea72/GAMEMANAGER.ipch
+*.ipch
+VSDLProject/.vs/SDLProject/v17/Browse.VC.db
+VSDLProject/.vs/VSDLProject/v17/Browse.VC.db
