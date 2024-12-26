@@ -11,6 +11,6 @@ This project was made as a test for game development without a game engine. The 
 1. Open the 'VSDLProject' folder.
 2. Run the 'GenerateProject.bat' file. This will generate and configure a solution file that can be opened in Visual Studio.
 
-## Important Information:
+## Key Information:
 * The entry point for the application is "Source.cpp".
 * The main game logic is under "Game.cpp".
