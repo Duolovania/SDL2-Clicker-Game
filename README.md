@@ -7,7 +7,7 @@ This project was made as a test for game development without a game engine. The 
 ## Quick Preview of the Project:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/QDlZDhPDZ5Q/0.jpg)](https://www.youtube.com/watch?v=QDlZDhPDZ5Q)
 
-## How to Run:
+## How to Run the Project:
 1. Open the 'VSDLProject' folder.
 2. Run the 'GenerateProject.bat' file. This will generate and configure a solution file that can be opened in Visual Studio.
 
