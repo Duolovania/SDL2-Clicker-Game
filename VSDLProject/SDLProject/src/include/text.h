@@ -6,12 +6,10 @@
 class Text : public GameObject
 {
 	public:
-		Text(const char* path = nullptr, int size = 0, SDL_Color col = {255, 255, 255}, SDL_Renderer* render = nullptr);
+		Text(std::string path, int size = 0, SDL_Color col = {255, 255, 255}, SDL_Renderer* render = nullptr);
 		~Text();
 
 		Transform transform;
-
-		//void SetTransform(int x, int y, int w, int h);
 
 		void SetTransform(int x, int y, int w, int h)
 		{
@@ -28,8 +26,6 @@ class Text : public GameObject
 			rect.h = transform.scale.y;
 
 			SDL_RenderCopy(renderer, msg, NULL, &rect);
-
-
 		}
 
 		void OnGameEnd()
@@ -37,9 +33,6 @@ class Text : public GameObject
 			if (msg != nullptr) SDL_DestroyTexture(msg);
 			TTF_CloseFont(font);
 		}
-
-		//void Draw();
-		//void OnGameEnd();
 
 		void SetAlpha(int newAlpha);
 		void ModifyText(const char* newText);

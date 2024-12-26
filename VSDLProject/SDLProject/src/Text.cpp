@@ -1,36 +1,34 @@
 #include "text.h"
 
-Text::Text(const char* path, int size, SDL_Color col, SDL_Renderer* render) : transform(Vector2(), Vector2())
+Text::Text(std::string path, int size, SDL_Color col, SDL_Renderer* render) 
+	: transform(Vector2(), Vector2())
 {
 	Game::Debug("->Text Object Successfully Instanced.");
 	renderer = render;
 	color = col;
 
-	font = TTF_OpenFont(path, size);
+	std::string newPath = "Assets/Fonts/" + path;
+
+	font = TTF_OpenFont(newPath.c_str(), size);
 	ModifyText("New Text");
 
 	SDL_QueryTexture(msg, NULL, NULL, &rect.w, &rect.h);
-	GameObject::gObjs.push_back(this);
+
+	//std::shared_ptr<Text> tempText = std::make_unique<Text>();
+
+	/*tempText->transform = this->transform;
+	tempText->rect = this->rect;
+	tempText->renderer = this->renderer;
+	tempText->font = this->font;
+	tempText->color = this->color;
+	tempText->msg = this->msg;
+
+	std::shared_ptr<GameObject> tempgObj = tempText;
+
+	GameObject::gObjs.push_back(tempgObj);*/
 }
 
 Text::~Text() {}
-
-//void Text::SetTransform(int x, int y, int w, int h)
-//{
-//	transform.position = Vector2(x, y);
-//	transform.scale = Vector2(w, h);
-//}
-
-//void Text::Draw()
-//{
-//	rect.x = transform.position.x;
-//	rect.y = transform.position.y;
-//
-//	rect.w = transform.scale.x;
-//	rect.h = transform.scale.y;
-//
-//	SDL_RenderCopy(renderer, msg, NULL, &rect);
-//}
 
 void Text::ModifyText(const char* newText)
 {
@@ -40,9 +38,3 @@ void Text::ModifyText(const char* newText)
 
 	SDL_FreeSurface(surf);
 }
-
-//void Text::OnGameEnd()
-//{
-//	if (msg != nullptr) SDL_DestroyTexture(msg);
-//	TTF_CloseFont(font);
-//}

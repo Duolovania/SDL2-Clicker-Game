@@ -12,7 +12,6 @@ class Image : public GameObject
 
 		void SetTransform(int x, int y, int w, int h);
 		void Draw();
-		//void OnGameEnd();
 
 		void SetAlpha(int newAlpha);
 		void Load(const char* path);

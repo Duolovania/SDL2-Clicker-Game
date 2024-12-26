@@ -1,6 +1,6 @@
 #include "gameobject.h"
 
-std::vector<GameObject*> GameObject::gObjs;
+std::vector<std::shared_ptr<GameObject>> GameObject::gObjs;
 
 GameObject::GameObject()
 {

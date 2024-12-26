@@ -1,10 +1,11 @@
 #include "image.h"
 
-Image::Image(std::string path, SDL_Renderer* render) : transform(Vector2(), Vector2())
+Image::Image(std::string path, SDL_Renderer* render) 
+	: transform(Vector2(), Vector2())
 {
 	if (path != "")
 	{
-		std::string combinedPath = "DevAssets/Textures/" + path;
+		std::string combinedPath = "Assets/Textures/" + path;
 
 		const char* newPath = combinedPath.c_str();
 		std::string debugPath = newPath;
@@ -16,7 +17,17 @@ Image::Image(std::string path, SDL_Renderer* render) : transform(Vector2(), Vect
 		
 		img = IMG_LoadTexture(renderer, newPath);
 		SDL_QueryTexture(img, NULL, NULL, &rect.w, &rect.h);
-		GameObject::gObjs.push_back(this);
+
+		std::shared_ptr<Image> tempImg = std::make_unique<Image>();
+
+		tempImg->transform = this->transform;
+		tempImg->rect = this->rect;
+		tempImg->renderer = this->renderer;
+		tempImg->img = this->img;
+
+		std::shared_ptr<GameObject> tempgObj = tempImg;
+
+		GameObject::gObjs.push_back(tempgObj);
 	}
 }
 
@@ -49,8 +60,3 @@ void Image::Load(const char* path)
 	if (img != nullptr) SDL_DestroyTexture(img);
 	img = IMG_LoadTexture(renderer, path);
 }
-
-//void Image::OnGameEnd()
-//{
-//	if (img != nullptr) SDL_DestroyTexture(img);
-//}

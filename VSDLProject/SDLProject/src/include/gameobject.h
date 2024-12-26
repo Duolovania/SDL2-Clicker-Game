@@ -8,6 +8,6 @@ class GameObject
 		virtual void Draw() = 0;
 		virtual void OnGameEnd() = 0;
 
-		GameObject();		
-		static std::vector<GameObject*> gObjs;
+		GameObject();	
+		static std::vector<std::shared_ptr<GameObject>> gObjs;
 };

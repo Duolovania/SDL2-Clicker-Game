@@ -17,23 +17,13 @@ Mix_Chunk* tick;
 
 SDL_Color textCol = { 255, 255, 255 };
 
-Text wtitle;
-Text prompt;
-Text wKey;
+std::shared_ptr<Text> wTitle, prompt, wKey;
+Image wWing, wSanders, wLogo, wBucket;
 
-Image wWing;
-Image wSanders;
-Image wLogo;
-Image wBucket;
-
-Image oliver;
-
-Vector2 mousePos;
+Vector2 mousePos, wingUpScale;
 
 bool gameRunning = false;
 const char* scorePtr;
-
-Vector2 wingUpScale;
 
 Game::Game()
 {
@@ -62,22 +52,12 @@ void Game::Run()
     Mix_FreeChunk(fLick);
     Mix_FreeChunk(noot);
 
-    //SDL_DestroyTexture(wWing.img);
-    //SDL_DestroyTexture(wSanders.img);
-    //SDL_DestroyTexture(prompt.msg);
-    //SDL_DestroyTexture(wtitle.msg);
-    //SDL_DestroyTexture(wKey.msg);
-    //SDL_DestroyTexture(oliver.img);
-
     for (auto gObj : GameObject::gObjs)
     {
         gObj->OnGameEnd();
-        //Game::Debug("pointuh problemo");
     }
 
     SDL_DestroyWindow(window);
-    //TTF_CloseFont(wtitle.font);
-    //TTF_CloseFont(prompt.font);
     SDL_DestroyRenderer(renderer);
 }
 
@@ -101,20 +81,17 @@ void Game::Init(const char* title, int x, int y, int w, int h, Uint32 flags)
     wSanders = Image("buff.png", renderer);
     wSanders.SetTransform(screenWidth - 1400, screenHeight - 400, w * 6, h * 3);
 
-    oliver = Image("oliv.JPG", renderer);
-    oliver.SetTransform(screenWidth * 2, screenHeight, w * 6, h * 3);
+    wKey = std::make_unique<Text>("lemonMilk.otf", 60, textCol, renderer);
+    wKey->ModifyText("Press any Key to Begin.");
+    wKey->SetTransform((screenWidth / 2 - 200), (screenHeight / 8), screenWidth / 2, screenHeight / 8);
 
-    wKey = Text("Assets/Fonts/lemonMilk.otf", 60, textCol, renderer);
-    wKey.ModifyText("Press any Key to Begin.");
-    wKey.SetTransform((screenWidth / 2 - 400), (screenHeight / 2 - 150), 100, 100);
+    wTitle = std::make_unique<Text>("OlivettiNeue.otf", 30, textCol, renderer);
+    wTitle->ModifyText("0");
+    wTitle->SetTransform((screenWidth / 2 - 480), (screenHeight / 2 - 300), 100, 100);
 
-    wtitle = Text("Assets/Fonts/OlivettiNeue.otf", 30, textCol, renderer);
-    wtitle.ModifyText("0");
-    wtitle.SetTransform((screenWidth / 2 - 480), (screenHeight / 2 - 300), 100, 100);
-
-    prompt = Text("Assets/Fonts/font.ttf", 50, textCol, renderer);
-    prompt.ModifyText("Click the Chicken");
-    prompt.SetTransform(screenWidth / 2 - 480, screenHeight / 2 + 230, 100, 100);
+    prompt = std::make_unique<Text>("font.ttf", 50, textCol, renderer);
+    prompt->ModifyText("Click the Screen");
+    prompt->SetTransform(screenWidth / 2 - 480, screenHeight / 2 + 230, screenWidth / 2, screenHeight / 8);
 
     wWing = Image("wickedwing.png", renderer);
     wWing.SetTransform(screenWidth, screenHeight, w, h);
@@ -145,19 +122,17 @@ void Game::Forever()
     {
         // Refreshing textures.
         wSanders.Draw();
-        oliver.Draw();
         wWing.Draw();
-        wtitle.Draw();
-        prompt.Draw();
+        wTitle->Draw();
+        prompt->Draw();
         wBucket.Draw();
 
         // Sine wave movement.
         wWing.transform.position.y = ((sin((time) * 10)) * 10) + 150;
-        prompt.transform.position.x = ((cos((time) * 20)) * 2) + 25;
+        prompt->transform.position.x = ((cos((time) * 20)) * 2) + 25;
 
         wSanders.SetAlpha(((sin((time) * 20)) * 10) + 150);
 
-        //if (evnt.button.button == SDL_BUTTON_LEFT && distanceFromCursor() < 150) 
         SDL_GetMouseState(&mousePos.x, &mousePos.y);
 
         if (wWing.transform.DistanceTo(mousePos) < 150)
@@ -168,8 +143,8 @@ void Game::Forever()
         std::string strObj(std::to_string(gameManager.score));
         scorePtr = &strObj[0];
 
-        wtitle.ModifyText(scorePtr);
-        wtitle.transform = Transform(Vector2((screenWidth / 2 - 480), (screenHeight / 2 - 300)), Vector2::Uniform(100));
+        wTitle->ModifyText(scorePtr);
+        wTitle->transform = Transform(Vector2((screenWidth / 2 - 480), (screenHeight / 2 - 300)), Vector2::Uniform(100));
 
         SDL_SetRenderDrawColor(renderer, 204, 41, 54, 255);
 
@@ -186,16 +161,16 @@ void Game::Forever()
         if (!Mix_PlayingMusic())
         {
             Mix_PlayChannel(-1, fLick, 0);
-            Mix_VolumeMusic(MIX_MAX_VOLUME / 4);
+            Mix_VolumeMusic(MIX_MAX_VOLUME / 10);
             Mix_PlayMusic(bgm, -1);
         }
     }
     else
     {
         wLogo.Draw();
-        wKey.Draw();
+        wKey->Draw();
 
-        wKey.transform.position = Vector2((((sin((time) * 10)) * 2) + 400), ((cos((time) * 10)) * 2) + 150);
+        wKey->transform.position = Vector2((((sin((time) * 10)) * 2) + 275), ((cos((time) * 10)) * 2) + 400);
         SDL_SetRenderDrawColor(renderer, 26, 24, 27, 255);
     }
 
