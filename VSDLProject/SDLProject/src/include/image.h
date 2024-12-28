@@ -14,7 +14,7 @@ class Image : public GameObject
 		void Draw();
 
 		void SetAlpha(int newAlpha);
-		void Load(const char* path);
+		void Load(std::string path);
 
 		void OnGameEnd()
 		{

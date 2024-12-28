@@ -2,10 +2,10 @@
   Game.cpp
 C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(79,77): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(79,68): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(131,64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(132,65): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(134,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(173,103): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(173,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(181,13): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(134,64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(135,65): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(137,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(171,103): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(171,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(178,13): warning C4305: '+=': truncation from 'double' to 'float'
   SDLProject.vcxproj -> C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\bin\Debug-windows-x86_64\SDLProject\SDLProject.exe

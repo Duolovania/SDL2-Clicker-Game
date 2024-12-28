@@ -5,17 +5,12 @@ Image::Image(std::string path, SDL_Renderer* render)
 {
 	if (path != "")
 	{
-		std::string combinedPath = "Assets/Textures/" + path;
-
-		const char* newPath = combinedPath.c_str();
+		std::string newPath = "Assets/Textures/" + path;
 		std::string debugPath = newPath;
-
-		std::string newLog = (std::string)"->Image Object: " + debugPath + " Successfully Loaded.";
-		Game::Debug(newLog);
 
 		renderer = render;
 		
-		img = IMG_LoadTexture(renderer, newPath);
+		img = IMG_LoadTexture(renderer, newPath.c_str());
 		SDL_QueryTexture(img, NULL, NULL, &rect.w, &rect.h);
 
 		std::shared_ptr<Image> tempImg = std::make_unique<Image>();
@@ -55,8 +50,10 @@ void Image::SetAlpha(int newAlpha)
 	SDL_SetTextureAlphaMod(img, newAlpha);
 }
 
-void Image::Load(const char* path)
+void Image::Load(std::string path)
 {
+	std::string newPath = "Assets/Textures/" + path;
+
 	if (img != nullptr) SDL_DestroyTexture(img);
-	img = IMG_LoadTexture(renderer, path);
+	img = IMG_LoadTexture(renderer, newPath.c_str());
 }

@@ -3,7 +3,6 @@
 Text::Text(std::string path, int size, SDL_Color col, SDL_Renderer* render) 
 	: transform(Vector2(), Vector2())
 {
-	Game::Debug("->Text Object Successfully Instanced.");
 	renderer = render;
 	color = col;
 
@@ -30,9 +29,10 @@ Text::Text(std::string path, int size, SDL_Color col, SDL_Renderer* render)
 
 Text::~Text() {}
 
-void Text::ModifyText(const char* newText)
+void Text::ModifyText(std::string newText)
 {
-	surf = TTF_RenderText_Solid(font, newText, color);
+	surf = TTF_RenderText_Solid(font, newText.c_str(), color);
+
 	if (msg != nullptr) SDL_DestroyTexture(msg);
 	msg = SDL_CreateTextureFromSurface(renderer, surf);
 

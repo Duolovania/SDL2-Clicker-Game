@@ -35,7 +35,7 @@ class Text : public GameObject
 		}
 
 		void SetAlpha(int newAlpha);
-		void ModifyText(const char* newText);
+		void ModifyText(std::string newText);
 
 	private:
 		TTF_Font* font;

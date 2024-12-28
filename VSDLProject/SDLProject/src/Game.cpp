@@ -9,7 +9,7 @@
 #include "crtdbg.h"
 
 GameManager gameManager;
-SDL_Surface* iconSurf = IMG_Load("Assets/Textures/colonel.png");
+SDL_Surface* iconSurf = IMG_Load("Assets/Textures/wickedwing.png");
 Mix_Music* bgm;
 Mix_Chunk* noot;
 Mix_Chunk* fLick;
@@ -42,7 +42,6 @@ Game::~Game() {}
 void Game::Run()
 {
     Init("Finger Lickin' Good Experience", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenWidth, screenHeight, SDL_WINDOW_SHOWN);
-    Debug("Entry Point Reached. Running Version 1.0");
     while (gameState != GameState::EXIT)
     {
         Forever();
@@ -70,6 +69,7 @@ void Game::Init(const char* title, int x, int y, int w, int h, Uint32 flags)
     
     window = SDL_CreateWindow(title, x, y, w, h, flags);
     renderer = SDL_CreateRenderer(window, -1, 0);
+
     SDL_SetWindowIcon(window, iconSurf);
     
     wLogo = Image("DLogo.png", renderer);
@@ -78,12 +78,12 @@ void Game::Init(const char* title, int x, int y, int w, int h, Uint32 flags)
     wBucket = Image("i.png", renderer);
     wBucket.SetTransform(screenWidth + 1100, screenHeight + 600, w / 3.0, h / 3.5);
 
-    wSanders = Image("buff.png", renderer);
+    wSanders = Image("colonel-background.png", renderer);
     wSanders.SetTransform(screenWidth - 1400, screenHeight - 400, w * 6, h * 3);
 
     wKey = std::make_unique<Text>("lemonMilk.otf", 60, textCol, renderer);
     wKey->ModifyText("Press any Key to Begin.");
-    wKey->SetTransform((screenWidth / 2 - 200), (screenHeight / 8), screenWidth / 2, screenHeight / 8);
+    wKey->SetTransform((screenWidth / 2 - 200), (screenHeight / 8), screenWidth / 2, screenHeight / 12);
 
     wTitle = std::make_unique<Text>("OlivettiNeue.otf", 30, textCol, renderer);
     wTitle->ModifyText("0");
@@ -117,9 +117,12 @@ void Game::Forever()
 
     // clear the screen
     SDL_RenderClear(renderer);
+    SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
     
     if (gameRunning)
     {
+        SDL_SetRenderDrawColor(renderer, 204, 41, 54, 255);
+
         // Refreshing textures.
         wSanders.Draw();
         wWing.Draw();
@@ -136,26 +139,19 @@ void Game::Forever()
         SDL_GetMouseState(&mousePos.x, &mousePos.y);
 
         if (wWing.transform.DistanceTo(mousePos) < 150)
-        {
             wWing.transform.scale = wingUpScale;
-        }
 
-        std::string strObj(std::to_string(gameManager.score));
-        scorePtr = &strObj[0];
-
-        wTitle->ModifyText(scorePtr);
+        wTitle->ModifyText((std::to_string(gameManager.score)));
         wTitle->transform = Transform(Vector2((screenWidth / 2 - 480), (screenHeight / 2 - 300)), Vector2::Uniform(100));
-
-        SDL_SetRenderDrawColor(renderer, 204, 41, 54, 255);
 
         if (wBucket.transform.DistanceTo(mousePos) < 40)
         {
-            if (gameManager.score >= gameManager.upgradeCost) wBucket.Load("Assets/Textures/a.png");
-            else wBucket.Load("Assets/Textures/na.png");
+            if (gameManager.score >= gameManager.upgradeCost) wBucket.Load("a.png");
+            else wBucket.Load("na.png");
         }
         else
         {
-            wBucket.Load("Assets/Textures/i.png");
+            wBucket.Load("i.png");
         }
 
         if (!Mix_PlayingMusic())
@@ -167,11 +163,12 @@ void Game::Forever()
     }
     else
     {
+        SDL_SetRenderDrawColor(renderer, 26, 24, 27, 255);
+
         wLogo.Draw();
         wKey->Draw();
 
         wKey->transform.position = Vector2((((sin((time) * 10)) * 2) + 275), ((cos((time) * 10)) * 2) + 400);
-        SDL_SetRenderDrawColor(renderer, 26, 24, 27, 255);
     }
 
     SDL_RenderPresent(renderer);
