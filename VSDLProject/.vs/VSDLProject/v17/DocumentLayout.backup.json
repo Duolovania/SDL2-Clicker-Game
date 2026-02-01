@@ -58,8 +58,7 @@
               "RelativeToolTip": "SDLProject\\src\\GameManager.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-28T19:09:11.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T19:09:11.021Z"
             },
             {
               "$type": "Document",
@@ -71,8 +70,7 @@
               "RelativeToolTip": "SDLProject\\src\\include\\image.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-28T19:04:56.157Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T19:04:56.157Z"
             },
             {
               "$type": "Document",
@@ -96,8 +94,7 @@
               "RelativeToolTip": "SDLProject\\src\\Text.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-26T07:52:50.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-26T07:52:50.743Z"
             },
             {
               "$type": "Document",
@@ -109,8 +106,7 @@
               "RelativeToolTip": "SDLProject\\src\\Image.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-26T07:43:39.931Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-26T07:43:39.931Z"
             },
             {
               "$type": "Document",
@@ -120,7 +116,7 @@
               "RelativeDocumentMoniker": "SDLProject\\src\\Game.cpp",
               "ToolTip": "C:\\Users\\Ryhan Khan\\Downloads\\GitHub\\SDL2-Clicker-Game\\VSDLProject\\SDLProject\\src\\Game.cpp",
               "RelativeToolTip": "SDLProject\\src\\Game.cpp",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACgAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-25T18:15:09.313Z",
               "EditorCaption": ""

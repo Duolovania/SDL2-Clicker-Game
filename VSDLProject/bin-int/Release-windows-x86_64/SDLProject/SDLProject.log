@@ -1,0 +1,53 @@
+﻿cl : command line  warning D9025: overriding '/MT' with '/MD'
+  Game.cpp
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\Vendor\SDL2\include\SDL_mutex.h(75,9): warning C4005: 'SDL_RELEASE': macro redefinition
+  (compiling source file 'src/Game.cpp')
+      C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\Vendor\SDL2\include\SDL_mutex.h(75,9):
+      'SDL_RELEASE' previously declared on the command line
+  
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(80,77): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(80,68): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(135,64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(136,65): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(138,53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(172,103): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(172,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Game.cpp(179,13): warning C4305: '+=': truncation from 'double' to 'float'
+  GameManager.cpp
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\Vendor\SDL2\include\SDL_mutex.h(75,9): warning C4005: 'SDL_RELEASE': macro redefinition
+  (compiling source file 'src/GameManager.cpp')
+      C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\Vendor\SDL2\include\SDL_mutex.h(75,9):
+      'SDL_RELEASE' previously declared on the command line
+  
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\GameManager.cpp(19,23): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  GameObject.cpp
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\Vendor\SDL2\include\SDL_mutex.h(75,9): warning C4005: 'SDL_RELEASE': macro redefinition
+  (compiling source file 'src/GameObject.cpp')
+      C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\Vendor\SDL2\include\SDL_mutex.h(75,9):
+      'SDL_RELEASE' previously declared on the command line
+  
+  Image.cpp
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\Vendor\SDL2\include\SDL_mutex.h(75,9): warning C4005: 'SDL_RELEASE': macro redefinition
+  (compiling source file 'src/Image.cpp')
+      C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\Vendor\SDL2\include\SDL_mutex.h(75,9):
+      'SDL_RELEASE' previously declared on the command line
+  
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Image.cpp(34,30): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Source.cpp
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\Vendor\SDL2\include\SDL_mutex.h(75,9): warning C4005: 'SDL_RELEASE': macro redefinition
+  (compiling source file 'src/Source.cpp')
+      C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\Vendor\SDL2\include\SDL_mutex.h(75,9):
+      'SDL_RELEASE' previously declared on the command line
+  
+  Text.cpp
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\Vendor\SDL2\include\SDL_mutex.h(75,9): warning C4005: 'SDL_RELEASE': macro redefinition
+  (compiling source file 'src/Text.cpp')
+      C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\Vendor\SDL2\include\SDL_mutex.h(75,9):
+      'SDL_RELEASE' previously declared on the command line
+  
+  Transform.cpp
+  Vector2.cpp
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Vector2.cpp(11,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\SDLProject\src\Vector2.cpp(11,17): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  SDLProject.vcxproj -> C:\Users\Ryhan Khan\Downloads\GitHub\SDL2-Clicker-Game\VSDLProject\bin\Release-windows-x86_64\SDLProject\SDLProject.exe

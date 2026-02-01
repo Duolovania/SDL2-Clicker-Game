@@ -42,6 +42,7 @@ Game::~Game() {}
 void Game::Run()
 {
     Init("Finger Lickin' Good Experience", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenWidth, screenHeight, SDL_WINDOW_SHOWN);
+
     while (gameState != GameState::EXIT)
     {
         Forever();

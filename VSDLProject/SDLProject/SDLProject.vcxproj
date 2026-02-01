@@ -59,7 +59,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SDL_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;src\include;Vendor\SDL2;Vendor\SDL2\include;Vendor\SDL2_image;Vendor\SDL2_image\include;Vendor\SDL2_ttf;Vendor\SDL_mixer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;src\include;Assets\Textures;Vendor\SDL2;Vendor\SDL2\include;Vendor\SDL2_image;Vendor\SDL2_image\include;Vendor\SDL2_ttf;Vendor\SDL_mixer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SDL_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;src\include;Vendor\SDL2;Vendor\SDL2\include;Vendor\SDL2_image;Vendor\SDL2_image\include;Vendor\SDL2_ttf;Vendor\SDL_mixer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;src\include;Assets\Textures;Vendor\SDL2;Vendor\SDL2\include;Vendor\SDL2_image;Vendor\SDL2_image\include;Vendor\SDL2_ttf;Vendor\SDL_mixer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
